@@ -1,0 +1,21 @@
+!!! 5
+html(data-ng-app='appName', lang='en')
+	head
+		meta(name='author', content='content')
+		meta(charset='UTF-8')
+		title Title
+		//link(href='css/bootstrap-responsive.css', rel='stylesheet')
+		link(href='css/bootstrap.css', rel='stylesheet')
+		link(href='//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css', rel='stylesheet')
+		link(href='css/style.css',rel='stylesheet')
+	body
+		div(data-ng-view='')
+
+	script(src='http://code.jquery.com/jquery-1.10.0.min.js')
+	// Angular JS off CDN, otherwise fallback.
+	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js')
+	script(src='scripts/ui-bootstrap-tpls-0.2.0.js')
+	script(src='scripts/keypress.js')
+	//script(src='scripts/bootstrap.js')
+	script(src='scripts/script.js')
+
