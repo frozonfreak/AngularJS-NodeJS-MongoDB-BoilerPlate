@@ -1,5 +1,5 @@
 
-var appName = angular.module('appName',['ui.bootstrap','ui.keypress']);
+var appName = angular.module('appName',['ui.bootstrap','ui.keypress','ngRoute']);
 
 //Routing
 appName.config(function ($routeProvider) {

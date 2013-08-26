@@ -11,11 +11,14 @@ html(data-ng-app='appName', lang='en')
 	body
 		div(data-ng-view='')
 
-	script(src='http://code.jquery.com/jquery-1.10.0.min.js')
+	script(src='http://code.jquery.com/jquery-1.10.2.min.js')
 	// Angular JS off CDN, otherwise fallback.
-	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js')
-	script(src='scripts/ui-bootstrap-tpls-0.2.0.js')
-	script(src='scripts/keypress.js')
-	//script(src='scripts/bootstrap.js')
+	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js')
+	script
+		window.angular || document.write('<script src="scripts/vendor/angular.min.js"><\\/script>');
+	script(src='scripts/vendor/angular-route.min.js')
+	script(src='scripts/vendor/ui-bootstrap-tpls-0.5.0.min.js')
+	script(src='scripts/vendor/keypress.js')
+	//script(src='scripts/vendor/bootstrap.js')
 	script(src='scripts/script.js')
 
