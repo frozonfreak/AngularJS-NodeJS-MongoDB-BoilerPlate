@@ -28,6 +28,7 @@ app.configure(function(){
   app.set('view options', {layout: false});
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
+  app.use(express.bodyParser());
   app.use(express.cookieParser(config.sessionKey));
 
   
@@ -56,6 +57,7 @@ app.get('/', routes.index);
 //-----------------------------------------------------------------------------------------------
 
 app.post('/services', function (req, res){
+    console.log(req.body);
     switch(req.body.type)
     {
       case 'type':

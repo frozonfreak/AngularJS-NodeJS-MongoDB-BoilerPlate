@@ -15,23 +15,52 @@ smApp.config(function($stateProvider, $urlRouterProvider) {
       controller: 'app404Controller',
     })
     // For any unmatched url, redirect to /state1
-     $urlRouterProvider.otherwise("/404");
+     $urlRouterProvider.otherwise("/");
 
 });
-//controller
-smApp.controller('appController', function($scope){
+//Handle all HTTP calls to server
+smApp.factory('appSession', function($http){
+    return {
+        sessionName: function(type) {
+            return $http.post('/services', { 
+                type : 'typeID'
+            });
+        }
+    }
+});
 
-	$scope.taskList = [];
-	$scope.task;
-	$scope.taskDetail;
-	$scope.deadLine;
+//Handle shared data between controllers
+smApp.service('sharedValues', function () {
+    //Store selected session details
+    var sessionVal;
+    
+
+    return {
+            //Get and Set Session Values
+            getSession: function () {
+                return sessionVal;
+            },
+            setSession: function(value) {
+                sessionVal = value;
+            }
+        };
+});
+
+//controller
+smApp.controller('appController', function($scope, appSession,sharedValues){
 	$scope.alerts = [];
 	$scope.searchText;
-	
+	$scope.URLText = "hello";
+  $scope.displayError = function(data, status){
+      console.log("Error");
+  };
+  $scope.displaySuccess = function(data, status){
+      console.log(data);
+  };
   	//Initializer
 	init();
 	function init(){
-		
+		appSession.sessionName($scope.URLText).success($scope.displaySuccess).error($scope.displayError);
 		
 	};
 	
