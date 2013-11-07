@@ -7,7 +7,7 @@ smApp.config(function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: "/",
       templateUrl: "partials/home.html",
-      controller: 'appController',
+      controller: "appController",
     })
     .state('404', {
       url: "/404",
@@ -57,17 +57,22 @@ smApp.controller('appController', function($scope, appSession,sharedValues){
   $scope.displaySuccess = function(data, status){
       console.log(data);
   };
+  $scope.sendToServer = function(){
+    appSession.sessionName($scope.URLText).success($scope.displaySuccess).error($scope.displayError);
+  };
   	//Initializer
 	init();
 	function init(){
-		appSession.sessionName($scope.URLText).success($scope.displaySuccess).error($scope.displayError);
-		
 	};
 	
 });
+
+//404 Controller
 smApp.controller('app404Controller', function($scope){
 
 });
+
+//Active Menu Check
 angular.module('smApp').run(function($http, $rootScope, $location) {
 
 //Active menu

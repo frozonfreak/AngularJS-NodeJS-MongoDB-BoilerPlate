@@ -6,7 +6,6 @@ var MongoClient = require('mongodb').MongoClient
 module.exports = {
 	executeType:function(req, res){
 		console.log(req.body.type);
-		console.log(req.body.ID);
 		DBtools.executeType(req, res,function(err,result){
 	        if(err){
 	          console.log(err);
@@ -14,7 +13,7 @@ module.exports = {
 	        }
 
 	        res.contentType('json');
-	        res.write(JSON.stringify(result));
+	        res.write(JSON.stringify("OutPut"));
    			res.end();
 	
 	    });

@@ -9,4 +9,4 @@ exports.mongoPath   = "mongodb://localhost:27017/";
 exports.dbName      = "Database";
 
 //Collections
-exports.userLogin   	= "collection";
+exports.collection   	= "collection";
