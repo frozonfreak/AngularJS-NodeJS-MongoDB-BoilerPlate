@@ -22,12 +22,13 @@ var express   = require('express')
 //-----------------------------------------------------------------------------------------------
 app.configure(function(){
   app.use(express.favicon(__dirname + '/public/image/favicon.ico')); 
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3001);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('view options', {layout: false});
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
+  app.use(express.bodyParser());
   app.use(express.cookieParser(config.sessionKey));
 
   
@@ -40,9 +41,9 @@ app.configure( 'development', function (){
   app.use( express.errorHandler({ dumpExceptions : true, showStack : true }));
 });
  
-app.configure( 'production', function (){
-  app.use( express.errorHandler());
-});
+//app.configure( 'production', function (){
+//  app.use( express.errorHandler());
+//});
 
 //-----------------------------------------------------------------------------------------------
 //Navigations routes
@@ -57,9 +58,10 @@ app.get('/', routes.index);
 //-----------------------------------------------------------------------------------------------
 
 app.post('/services', function (req, res){
+    console.log(req.body);
     switch(req.body.type)
     {
-      case 'type':
+      case 'typeID':
         module.executeType(req,res);
       break;
 

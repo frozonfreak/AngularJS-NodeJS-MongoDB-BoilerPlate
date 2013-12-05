@@ -1,4 +1,5 @@
 !!! 5
+<<<<<<< HEAD
 html(data-ng-app='appName', lang='en')
 	head
 		meta(name='author', content='content')
@@ -22,3 +23,53 @@ html(data-ng-app='appName', lang='en')
 	//script(src='scripts/vendor/bootstrap.js')
 	script(src='scripts/script.js')
 
+=======
+html.no-js(data-ng-app='smApp', lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    //Place favicon.ico and apple-touch-icon.png in the root directory 
+    link(rel='stylesheet', href='css/vendor/bootstrap.css')
+    link(rel='stylesheet', href='css/vendor/bootstrap-theme.css')
+    link(rel='stylesheet', href='css/style.css')
+    script(src='js/vendor/modernizr.js')
+  body
+    //Add your site or application content here 
+    nav.navbar.navbar-inverse(role='navigation')
+      //Brand and toggle get grouped for better mobile display 
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(ui-sref='home') App Name/Logo
+      //Collect the nav links, forms, and other content for toggling 
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li(ng-class='{ active: isActive(\'/\')}')
+            a(ui-sref='home') Link
+          li(ng-class='{ active: isActive(\'/\')}')
+            a(ui-sref='home') Link
+        form.navbar-form.navbar-left(role='search')
+          .form-group
+            input.form-control(type='text', placeholder='Search')
+          button.btn.btn-default(type='submit') Submit
+    div(ui-view)
+  script(src='//code.jquery.com/jquery-2.0.3.min.js')
+  //attempt to load AngularJS from CDN 
+  script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js')
+  script(src='js/vendor/bootstrap.min.js')
+  script(src='js/vendor/ui-bootstrap-tpls-0.6.0.min.js')
+  script(src='js/vendor/angular-ui-router.min.js')
+  script(src='js/app.js')
+  //Google Analytics: change UA-XXXXX-X to be your site's ID. 
+  script
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+>>>>>>> 51c638c6c953ce9a7a1d75a617916817deca28a5

@@ -9,8 +9,8 @@ module.exports = {
         db.close();
          return callback(new Error("Unable to Connect to DB"));
        }
-       var collection = db.collection(config.template);
-       collection.find({'id':req.body.ID} , {'fieldname1' : 1, 'fieldname2' : 1}).nextObject(function(err, doc) {
+       var collection = db.collection(config.collection);
+       collection.find({'id':req.body.type} , {'fieldname1' : 1, 'fieldname2' : 1}).nextObject(function(err, doc) {
          if(err){
            db.close();
            return callback(new Error("Error finding document in DB"));
