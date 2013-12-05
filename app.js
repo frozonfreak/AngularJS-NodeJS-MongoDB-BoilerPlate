@@ -52,7 +52,8 @@ app.get('/', routes.index);
 
 
 //-----------------------------------------------------------------------------------------------
-//Web Service
+// Web Service Calls
+// All Interaction with Client and Server happen via POST JSON requests
 //-----------------------------------------------------------------------------------------------
 
 app.post('/services', function (req, res){
