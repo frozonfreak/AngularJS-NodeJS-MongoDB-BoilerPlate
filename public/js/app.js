@@ -48,21 +48,34 @@ smApp.service('sharedValues', function () {
 
 //controller
 smApp.controller('appController', function($scope, appSession,sharedValues){
+
+  //Notification Bar data content
 	$scope.alerts = [];
+
 	$scope.searchText;
+  //POST Request test parameter
 	$scope.URLText = "hello";
+  $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+  };
+  //Executed if POST request to server fails
   $scope.displayError = function(data, status){
       console.log("Error");
+      $scope.alerts.push({type: 'error', msg: data || "Retrival Failed"});
   };
+  //Success function executed after succesfull POST request to server
   $scope.displaySuccess = function(data, status){
       console.log(data);
   };
   $scope.sendToServer = function(){
     appSession.sessionName($scope.URLText).success($scope.displaySuccess).error($scope.displayError);
   };
-  	//Initializer
+  
+  //Initializer
+  //This code will initialise, as soon as the corresponding partial is loaded. 
 	init();
 	function init(){
+
 	};
 	
 });
@@ -76,6 +89,9 @@ smApp.controller('app404Controller', function($scope){
 angular.module('smApp').run(function($http, $rootScope, $location) {
 
 //Active menu
+//Check for Active menu and set the corresponding menu to selected. 
+//TODO - multiple check calls. need to optimise
+
  $rootScope.isActive = function (viewLocation) {
         console.log($location.path());
         return viewLocation === $location.path();

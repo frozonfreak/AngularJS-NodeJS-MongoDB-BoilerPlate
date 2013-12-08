@@ -67,6 +67,7 @@ app.get('/path/:param1/:param2', function(req, res, next){
 //-----------------------------------------------------------------------------------------------
 // Web Service Calls
 // All Interaction with Client and Server happen via POST JSON requests
+// Request URL http://<servername>/services
 //-----------------------------------------------------------------------------------------------
 
 app.post('/services', function (req, res){
