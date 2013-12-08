@@ -22,13 +22,18 @@ var express   = require('express')
 //-----------------------------------------------------------------------------------------------
 app.configure(function(){
   app.use(express.favicon(__dirname + '/public/image/favicon.ico')); 
-  app.set('port', process.env.PORT || 3001);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('view options', {layout: false});
   app.use(express.logger('dev'));
   app.use(express.methodOverride());
-  app.use(express.bodyParser());
+
+  //Used for passing parameters from Client to Server. 
+  //All parameters are under req.body.<param name>
+  app.use(express.bodyParser());  
+
+  //Set up session variable
   app.use(express.cookieParser(config.sessionKey));
 
   
@@ -46,11 +51,18 @@ app.configure( 'development', function (){
 //});
 
 //-----------------------------------------------------------------------------------------------
-//Navigations routes
+// GET used only for page navigation
+// Navigations routes
 //-----------------------------------------------------------------------------------------------
+
+//Basic routing
 app.get('/', routes.index);
 
-
+//Routing with parameters
+app.get('/path/:param1/:param2', function(req, res, next){
+  //Download Files using NodeJS
+  module.fileDownload(req, res);
+});
 
 //-----------------------------------------------------------------------------------------------
 // Web Service Calls

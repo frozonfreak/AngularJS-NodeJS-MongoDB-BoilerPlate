@@ -6,7 +6,7 @@ Built on top of [http://html5boilerplate.com](http://html5boilerplate.com)
 ## Features
 
 * Twitter Bootstrap v 3 
-* AngularJS 1.2.0 rc3
+* AngularJS 1.2.3
 * jQuery 2.0.3
 * HTML5 Boiler plate 4.2.0
 * AngularUI Bootstrap 0.6.0
@@ -14,5 +14,18 @@ Built on top of [http://html5boilerplate.com](http://html5boilerplate.com)
 
 ## Documentation
 
-In Progress
+###Using the code
 
+	Make sure to install mongodb in system. [http://mongodb.org](MongoDB)
+	Create a required database and collection in Mongo
+	Update the db and collection name into config.js
+
+
+##TO DO
+
+*Integrate Grunt
+*Integrate Karma
+
+
+##Errors
+ *I am still testing the code and adding more modeules. So if any error do let me know.
