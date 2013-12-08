@@ -28,4 +28,4 @@
 
 
 ##Errors
- *I am still testing the code and adding more modeules. So if any error do let me know.
+* I am still testing the code and adding more modeules. So if any error do let me know.
