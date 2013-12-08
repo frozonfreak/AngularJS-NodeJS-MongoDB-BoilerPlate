@@ -1,6 +1,6 @@
-# AngularJS NodeJS BoilerPlate
+# 	AngularJS NodeJS BoilerPlate
 
-Built on top of [http://html5boilerplate.com](http://html5boilerplate.com)
+ A modular boilerplate for applications using AngularJS frontend with NodeJS Server and MongoDB database
 
 
 ## Features
