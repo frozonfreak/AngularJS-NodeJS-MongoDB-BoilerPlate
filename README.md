@@ -16,15 +16,15 @@ Built on top of [http://html5boilerplate.com](http://html5boilerplate.com)
 
 ###Using the code
 
-	Make sure to install mongodb in system. [http://mongodb.org](MongoDB)
-	Create a required database and collection in Mongo
-	Update the db and collection name into config.js
+Make sure to install mongodb in system. [http://mongodb.org](MongoDB)
+Create a required database and collection in Mongo
+Update the db and collection name into config.js
 
 
 ##TO DO
 
-*Integrate Grunt
-*Integrate Karma
+* Integrate Grunt
+* Integrate Karma
 
 
 ##Errors
