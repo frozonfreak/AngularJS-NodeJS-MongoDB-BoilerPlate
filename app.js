@@ -36,8 +36,6 @@ app.configure(function(){
   //Set up session variable
   app.use(express.cookieParser(config.sessionKey));
 
-  
-  
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -59,6 +57,8 @@ app.configure( 'development', function (){
 app.get('/', routes.index);
 
 //Routing with parameters
+//Access the params with req.params.param1/req.params.param2
+//Example: http://servername/path/folder/file
 app.get('/path/:param1/:param2', function(req, res, next){
   //Download Files using NodeJS
   module.fileDownload(req, res);
@@ -74,6 +74,7 @@ app.post('/services', function (req, res){
     switch(req.body.type)
     {
       case 'typeID':
+        //Call function in module.js
         module.executeType(req,res);
       break;
 
