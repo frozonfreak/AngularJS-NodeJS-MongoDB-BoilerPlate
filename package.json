@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "Boilerplate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,5 +9,12 @@
     "express": "3.4.4",
     "jade": "*",
     "mongo": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }
