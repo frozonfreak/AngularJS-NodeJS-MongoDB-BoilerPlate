@@ -22,7 +22,7 @@ var express   = require('express')
 //-----------------------------------------------------------------------------------------------
 app.configure(function(){
   app.use(express.favicon(__dirname + '/public/image/favicon.ico')); 
-  app.set('port', process.env.PORT || 3002);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('view options', {layout: false});
