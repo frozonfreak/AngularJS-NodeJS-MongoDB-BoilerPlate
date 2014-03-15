@@ -30,7 +30,7 @@ module.exports = {
 			fs.exists('folder/'+req.params.param1+'/'+req.params.param2+'.extension', function (exists) {
 			  if(exists){
 			      var file = req.params.fileName+'.extension'
-			        , path =  '././renderedfiles/'+req.params.param1+'/'+ file;
+			        , path =  '././files/'+req.params.param1+'/'+ file;
 			      res.download(path);
 			  }
 			  else{
