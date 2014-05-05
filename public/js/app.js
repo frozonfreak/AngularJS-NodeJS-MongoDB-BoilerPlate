@@ -77,7 +77,7 @@ smApp.controller('appController', function($scope, appSession,sharedValues){
 	function init(){
 
 	};
-	
+
 });
 
 //404 Controller
