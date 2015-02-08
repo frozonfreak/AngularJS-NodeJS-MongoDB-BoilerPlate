@@ -16,7 +16,7 @@ module.exports = {
            return callback(new Error("Error finding document in DB"));
          }  
              db.close();
-             return callback("Success",doc);
+             return callback(null,doc); //Would be null initially
            });
      });
   }

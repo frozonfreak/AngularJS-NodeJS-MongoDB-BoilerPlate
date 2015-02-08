@@ -10,7 +10,7 @@ router.post('/services', function (req, res){
     console.log(req.body);
     switch(req.body.type)
     {
-      case 'typeID':
+      case 'type':
         //Call function in module.js
         module1.executeType(req,res);
       break;

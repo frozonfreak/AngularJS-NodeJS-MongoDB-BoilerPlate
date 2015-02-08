@@ -1,81 +1,52 @@
 doctype html
-
-html.no-js(data-ng-app='smApp', lang='en')
+html.no-js
   head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     title
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
-    // Place favicon.ico and apple-touch-icon.png in the root directory
-    link(rel='stylesheet', href='/css/vendor/bootstrap.css')
-    link(rel='stylesheet', href='/css/vendor/bootstrap-theme.css')
-    link(rel='stylesheet', href='/css/style.css')
-    script(src='js/vendor/modernizr.js')
-  body
-    nav.navbar.navbar-inverse(role='navigation')
-      .container-fluid
-        // Brand and toggle get grouped for better mobile display
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#') Brand
-        // Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='#') Link
-            li
-              a(href='#') Link
-            li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
-                | Dropdown
-                b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Action
-                li
-                  a(href='#') Another action
-                li
-                  a(href='#') Something else here
-                li.divider
-                li
-                  a(href='#') Separated link
-                li.divider
-                li
-                  a(href='#') One more separated link
-          form.navbar-form.navbar-left(role='search')
-            .form-group
-              input.form-control(type='text', placeholder='Search')
-            button.btn.btn-default(type='submit') Submit
-          ul.nav.navbar-nav.navbar-right
-            li
-              a(href='#') Link
-            li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
-                | Dropdown
-                b.caret
-              ul.dropdown-menu
-                li
-                  a(href='#') Action
-                li
-                  a(href='#') Another action
-                li
-                  a(href='#') Something else here
-                li.divider
-                li
-                  a(href='#') Separated link
-        // /.navbar-collapse
-      // /.container-fluid
-
-    div(ui-view)
-  script(src='//code.jquery.com/jquery-2.0.3.min.js')
-  // attempt to load AngularJS from CDN
-  script(src='js/vendor/angular.js')
-  script(src='js/vendor/bootstrap.min.js')
-  script(src='js/vendor/ui-bootstrap-tpls-0.11.0.js')
-  script(src='js/vendor/angular-ui-router.js')
-  script(src='js/app.js')
+    
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body(ng-app='angularApp')
+    .container
+      .header
+        ul.nav.nav-pills.pull-right
+          li.active
+            a(ng-href='#/') Home
+          li
+            a(ng-href='#/about') About
+          li
+            a(ng-href='#') Contact
+        h3.text-muted Angular Node App
+      div(ui-view='')
+      .footer
+        p
+          span.glyphicon
+          |  Footer
+    // Google Analytics: change UA-XXXXX-X to be your site's ID
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    
+    script(src='javascripts/component/jquery.js')
+    script(src='javascripts/component/bootstrap.js')
+    
+    script(src='javascripts/component/angular.js')
+    script(src='javascripts/component/angular-animate.js')
+    script(src='javascripts/component/angular-cookies.js')
+    script(src='javascripts/component/angular-ui-router.js')
+    
+    script(src='javascripts/component/ui-bootstrap-tpls-0.12.0.min.js')
+    
+    script(src='javascripts/app.js')
+    script(src='javascripts/controllers/main.js')
+    script(src='javascripts/controllers/about.js')
+    

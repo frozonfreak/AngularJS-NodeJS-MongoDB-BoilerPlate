@@ -4,17 +4,16 @@ var MongoClient = require('mongodb').MongoClient
 	, routes    = require('../routes')
 	, fs        = require('fs');
 
-module.exports.executeType = function(req, res){
-		console.log(req.body.type);
+module.exports.executeType = function(req, res){	
 		DBtools.executeType(req, res,function(err,result){
 	        if(err){
 	          console.log(err);
 	          return;
 	        }
 	        res.contentType('json');
-	        res.write(JSON.stringify("OutPut"));
+	        res.write(JSON.stringify(result));
+	        
    			res.end();
-
 	    });
 	};
 	//Download a file 
